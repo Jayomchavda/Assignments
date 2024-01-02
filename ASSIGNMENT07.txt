@@ -1,0 +1,98 @@
+												MODULE: 9 ReactJs Intro
+
+Q. What is React Js?
+Ans : React is a framework that employs Webpack to automatically compile React, JSX, and ES6 code while handling CSS file prefixes. React is a JavaScript-based UI development library.
+
+Q. What is NPM in React Js?
+Ans :The name npm (Node Package Manager) stems from when npm first was created as a package manager for Node.js. All npm packages are defined in files called package.json. The content of package.json must be written in JSON.
+
+Q. What is Role of Node Js in react Js?
+Ans: NodeJS is a framework of JavaScript which is mainly used for working with the backend of our application or building the backend using JavaScript, whereas ReactJS is a JavaScript front-end library.
+
+Q. What is CLI command In React Js?
+Ans :React has its own command-line interface (CLI) commands. However, these CLI commands are currently only used to create a passable version of a react application using the command line.
+
+Q.What is Components in React Js?
+Ans: Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML. Components come in two types, Class components and Function components, in this tutorial we will concentrate on Function components.
+
+Q. What is Header and Content Components in React Js?
+Ans: 
+Header Component : The Header component typically represents the top section of a webpage or application. It often contains elements such as the site's logo, navigation menu, and other information that should be displayed prominently at the top of the page.
+The Header component can include both presentational and functional elements. For example, it might include links to navigate between different sections of the application or buttons for user actions.
+
+Content Component : The Content component represents the main content area of a webpage or application. It is where the primary information or functionality is displayed. This section may change dynamically based on user interactions, route changes, or other events. The Content component often renders other components or containers that are responsible for displaying specific content or features. It plays a crucial role in organizing and presenting the main body of the application.
+
+
+Q.How to install React Js on Windows, Linux Operating System? How to Install NPM and How to check version of NPM?
+Ans : 
+
+Visit the official Node.js website: https://nodejs.org/.
+Download the LTS version.
+
+Run the downloaded installer and follow the installation instructions.
+The installer will also install npm.
+
+Install Create React App:
+Step-1 : npm install -g create-react-app
+Step-2: npx create-react-app my-react-app
+Step-3: cd my-react-app
+Step-4: npm start
+
+Check Version :
+node -v
+npm -v
+
+
+Q.How to check version of React Js?
+Ans : cd path/to/your/react/project
+	   npm list react
+
+Q. How to change in components of React Js?
+Ans: setState() setState() enqueues changes to the component state and tells React that this component and its children need to be re-rendered with the updated state. This is the primary method you use to update the user interface in response to event handlers and server responses.
+
+Q.Create Increment decrement state change by button click??
+Ans: export default function Funstate() {
+    let [count, setcount] = useState(50);
+    let [data, setdata] = useState({ amount: 50000, point: 5 });
+    let x = 10
+
+    const incx = () => {
+        x++;
+        console.log("x---->", x)
+    }
+
+    const inccount = () => {
+        setcount(count + 1)
+    }
+
+    const incamount = () => {
+        setdata({ ...data, amount: data.amount + 1 });
+    }
+
+    const incPoint = () => {
+        setdata({ ...data, point: data.point + 1 });
+    }
+    return (
+        <div className='text-center '>
+            <h1>x is {x}</h1>
+            <Button color="danger" onClick={incx}>INC X</Button>
+
+            <hr />
+
+            <h1>Count is {count}</h1>
+            <Button color="danger" onClick={inccount}>INC COUNT</Button>
+
+            <hr />
+
+            <h1>Count-2 is {data.amount}</h1>
+            <Button color="danger" onClick={incamount}>INC AMOUNT</Button>
+
+            <hr />
+            <h1>Point is {data?.point}</h1>
+            <Button color="danger" onClick={incPoint}> INC POINT </Button>
+
+        </div>
+    )
+}
+
+
